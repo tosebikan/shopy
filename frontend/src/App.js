@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [loading, setLoading] = useState(true);
+  const [product, setProducts] = useState([]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:1337/products/")
+  //     .then(response => {
+  //       // console.log(response);
+  //       setProducts(response.data);
+  //       setLoading(false);
+  //     })
+  //     .catch(err => {
+  //       setLoading(false);
+  //       console.log(err);
+  //     });
+  // });
+
+  return <div className="App">{loading && <div>Loading...</div>}</div>;
 }
 
 export default App;
