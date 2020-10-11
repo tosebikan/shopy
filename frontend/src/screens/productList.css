@@ -1,0 +1,7 @@
+.productList {
+  display: flex;
+}
+
+.productList__container {
+  display: flex;
+}
