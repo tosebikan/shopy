@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Loading from "../components/Loading";
-
 import "../App.css";
+import "./productList.css";
+import Loading from "../components/Loading";
+import config from "../config";
+const BASE_URL = config.BASE_URL;
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -22,7 +24,7 @@ function App() {
       });
   }, []);
 
-  console.log(products);
+  console.log();
   return (
     <div className="App">
       {loading && <Loading />}
@@ -31,11 +33,19 @@ function App() {
           Availble Products {products.length}
         </h2>
         <div className="productList__container">
-          {products.map(product => (
-            <div className="productList__product" key={product.id}>
-              <h3>{product.Name}</h3>
-            </div>
-          ))}
+          {products.map(product => {
+            console.log(BASE_URL + product.Image[0].url);
+            return (
+              <div className="productList__product" key={product.id}>
+                <h3>{product.Name}</h3>
+                <img
+                  src={BASE_URL + product.Image[0].url}
+                  alt={product.Name}
+                  className="productList__image"
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

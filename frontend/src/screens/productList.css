@@ -4,4 +4,20 @@
 
 .productList__container {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.productList__product {
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+  /* background-color: gray; */
+}
+
+.productList__image {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
 }
