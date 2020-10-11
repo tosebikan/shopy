@@ -1,0 +1,13 @@
+.loading__container {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
